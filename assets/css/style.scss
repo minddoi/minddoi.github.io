@@ -1,0 +1,37 @@
+---
+---
+
+@import "plain";
+@import "category";
+
+body {
+  font-family: 'ChosunGu', 'Pretendard', sans-serif;
+}
+
+@font-face {
+  font-family: 'ChosunGu';
+  src: url('/assets/font/ChosunGu.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/assets/font/Pretendard/Pretendard-Regular.woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+{% if site.plainwhite.search %}
+  @import "search";
+{% endif %}
+
+{%- if site.plainwhite.dark_mode -%}
+  @import "toggle";
+  @import "dark";
+{%- endif -%}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
