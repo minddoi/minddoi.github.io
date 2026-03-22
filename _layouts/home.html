@@ -1,0 +1,91 @@
+---
+layout: default
+---
+
+{%- if page.title -%}
+  <h1 class="page-heading">{{ page.title }}</h1>
+{%- endif -%}
+
+{{ content }}
+
+{%- if site.posts.size > 0 -%}
+  <ul class="posts">
+    <li class="posts-labelgroup" id="posts-labelgroup">
+      <h1 id="posts-label">posts</h1>
+      {% if site.plainwhite.search %}
+      <div class="search-container">
+        <div class="search-section">
+          <i class="icon-search"></i>
+          <input type="text" name="search" id="searchbar" autocomplete="off" aria-label="search in posts">
+        </div>
+        <div class="search-results" id="search-results" data-placeholder="No Results" style="display: none;"></div>
+      </div>
+      {% endif %}
+    </li>
+
+    <!-- 카테고리별 섹션 보여줄 콘텐츠 공간 -->
+    <li>
+      <section class="category-section">
+        <div class="category-section-header">
+          <h2 class="category-section-title">categories</h2>
+          <button type="button" class="category-add-button">+</button>
+        </div>
+
+        <div class="category-section-body">
+          <div class="category-folder-grid">
+            <a class="category-folder-card" href="#">
+              <img src="/assets/pink-folder.png" alt="애플 디벨로퍼 아카데미" class="category-folder-image">
+              <span class="category-folder-text">애플 디벨로퍼 아카데미</span>
+            </a>
+
+            <a class="category-folder-card" href="#">
+              <img src="/assets/pink-folder.png" alt="개발" class="category-folder-image">
+              <span class="category-folder-text">개발</span>
+            </a>
+
+            <a class="category-folder-card" href="#">
+              <img src="/assets/pink-folder.png" alt="디자인" class="category-folder-image">
+              <span class="category-folder-text">디자인</span>
+            </a>
+
+            <a class="category-folder-card" href="#">
+              <img src="/assets/pink-folder.png" alt="일상" class="category-folder-image">
+              <span class="category-folder-text">일상</span>
+            </a>
+
+        </div>
+      </section>
+    </li>
+
+    {%- for post in site.posts -%}
+      <li>
+        {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          <h2 class="post-title">{{ post.title | escape }}</h2>
+        </a>
+        <div class="post-meta">
+          <div class="post-date">
+            <i class="icon-calendar"></i>
+            {{ post.date | date: date_format }}
+          </div>
+          {%- if post.categories.size > 0-%}
+          <ul class="post-categories">
+            {%- for tag in post.categories -%}
+            <li>{{ tag }}</li>
+            {%- endfor -%}
+          </ul>
+          {%- endif -%}
+        </div>
+        <div class="post">
+          {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+          {%- endif -%}
+        </div>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+  <!-- <p class="feed-subscribe"><svg class="svg-icon orange">
+		<use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
+	</svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p> -->
+{%- endif -%}
