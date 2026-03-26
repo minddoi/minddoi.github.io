@@ -4,8 +4,10 @@
 @import "plain";
 @import "category";
 
+
 body {
   font-family: 'ChosunGu', 'Pretendard', sans-serif;
+  // cursor: url('/assets/pink-cursor.png') 0 0, auto;
 }
 
 @font-face {
@@ -34,4 +36,14 @@ body {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+::selection {
+  background: #ffe6f0;
+  color: #222;
+}
+
+::-moz-selection {
+  background: #ffe6f0;
+  color: #222;
 }

@@ -68,11 +68,31 @@ main {
     margin: 0;
   }
 
+  // .content {
+  //   @media screen and (min-width: $mobileW + 1) {
+  //     max-width: calc(100% - #{$leftWidth});
+  //     margin-left: $leftWidth;
+  //     width: 100%;
+  //   }
   .content {
     @media screen and (min-width: $mobileW + 1) {
       max-width: calc(100% - #{$leftWidth});
       margin-left: $leftWidth;
       width: 100%;
+      padding-left: 28px;
+      padding-right: 28px;
+      box-sizing: border-box;
+    }
+
+    @media screen and (max-width: $mobileW) {
+      padding-left: 20px;
+      padding-right: 20px;
+      box-sizing: border-box;
+    }
+
+    @media screen and (max-width: $smallMobileW) {
+      padding-left: 16px;
+      padding-right: 16px;
     }
   }
   .about {

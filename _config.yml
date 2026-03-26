@@ -10,7 +10,7 @@ sass:
   sass_dir: _sass
 plainwhite:
   name: 제나 Jenna
-  tagline: 디자인까지 잘하는 개발자를 꿈꾸는 제나라고 합니다｡*⭒
+  tagline: 디자인까지 잘하는 개발자를<br> 꿈꾸는 제나라고 합니다｡*⭒
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
