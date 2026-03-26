@@ -101,7 +101,7 @@
 
 .category-folder-image {
   width: 100%;
-  max-width: 230px;
+  max-width: 200px;
   height: auto;
   display: block;
 }
@@ -132,5 +132,18 @@
 @media (max-width: 480px) {
   .category-folder-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+.category-container {
+  margin: 45px 30px;
+
+  @media screen and (max-width: ₩smallMobileW) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  @media screen and (max-width: ₩mobileW) {
+    margin-top: 0;
   }
 }
